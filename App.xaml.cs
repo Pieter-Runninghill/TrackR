@@ -9,8 +9,9 @@ namespace TrackR
         {
             InitializeComponent();
 
-           
-            MainPage = new NavigationPage(new LoginPage());
+            var navPage = new NavigationPage(new MainPage());
+
+            MainPage = new LoginPage();
         }
     }
 }

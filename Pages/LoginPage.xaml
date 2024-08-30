@@ -2,21 +2,25 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TrackR.Pages.LoginPage"
-             BackgroundColor="White">
-
-    <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
-        <Image Source="trackr.png"
+             BackgroundColor="White"
+             xmlns:viewmodel="clr-namespace:TrackR.ViewModel"
+             x:DataType="viewmodel:LoginViewModel">
+    <ContentPage.Content>
+        <VerticalStackLayout VerticalOptions="Center" HorizontalOptions="Center">
+            <Image Source="TrackRTransparent.png"
                WidthRequest="200"
                HeightRequest="200"
                HorizontalOptions="Center" />
-
-        <Button Text="Login"
+            <Entry Text="{Binding _Username}" Placeholder="Username"/>
+            <Entry Text="{Binding _Password}" Placeholder="Password" IsPassword="True"/>
+            <Button Text="Login"
                 BackgroundColor="#1f2937"
                 TextColor="#27353a"
                 CornerRadius="25"
                 WidthRequest="200"
                 HeightRequest="50"
                 HorizontalOptions="Center"
-                Clicked="OnLoginButtonClicked" />
-    </StackLayout>
+                Command="{Binding LoginCommand}" />
+        </VerticalStackLayout>
+    </ContentPage.Content>
 </ContentPage>
