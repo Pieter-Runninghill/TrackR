@@ -1,35 +1,28 @@
-﻿<?xml version = "1.0" encoding = "UTF-8" ?>
+﻿<?xml version="1.0" encoding="UTF-8" ?>
 <Application xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:TrackR"
-   
+             x:Class="TrackR.App">
 
     <Application.Resources>
         <ResourceDictionary>
-          
             <Color x:Key="PrimaryBackgroundColor">#27353A</Color>
-
-        <Color x:Key="PrimaryTextColor">white</Color>
-
-           <Color x:Key="PrimaryButtonColor">#cfd70a</Color>
-           
+            <Color x:Key="PrimaryTextColor">white</Color>
+            <Color x:Key="PrimaryButtonColor">#cfd70a</Color>
 
             <Style TargetType="ContentPage">
                 <Setter Property="BackgroundColor" Value="{StaticResource PrimaryBackgroundColor}" />
             </Style>
-
             <Style TargetType="Button">
                 <Setter Property="BackgroundColor" Value="{StaticResource PrimaryButtonColor}" />
                 <Setter Property="TextColor" Value="{StaticResource PrimaryTextColor}" />
                 <Setter Property="CornerRadius" Value="25" />
                 <Setter Property="HeightRequest" Value="50" />
             </Style>
-
             <Style TargetType="Label">
                 <Setter Property="TextColor" Value="{StaticResource PrimaryTextColor}" />
                 <Setter Property="FontSize" Value="18" />
             </Style>
-
             <Style TargetType="Entry">
                 <Setter Property="TextColor" Value="{StaticResource PrimaryTextColor}" />
                 <Setter Property="FontSize" Value="18" />

@@ -1,18 +1,13 @@
-using Microsoft.Maui.Controls;
+using TrackR.ViewModel;
 
 namespace TrackR.Pages
 {
     public partial class LoginPage : ContentPage
     {
-        public LoginPage()
+        public LoginPage(LoginPageViewModel viewModel)
         {
             InitializeComponent();
-        }
-
-        private async void OnLoginButtonClicked(object sender, EventArgs e)
-        {
-            
-            await Navigation.PushAsync(new MainPage());
+            BindingContext = viewModel;
         }
     }
 }

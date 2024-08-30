@@ -1,5 +1,6 @@
 ﻿using Microsoft.Maui.Controls;
 using TrackR.Pages;
+using TrackR.ViewModel;
 
 namespace TrackR
 {
@@ -7,11 +8,10 @@ namespace TrackR
     {
         public App()
         {
-            InitializeComponent(); 
+            InitializeComponent();
 
-            var navPage = new NavigationPage(new MainPage());
-
-            MainPage = new LoginPage();
+            var loginViewModel = new LoginPageViewModel();
+            MainPage = new NavigationPage(new LoginPage(loginViewModel));
         }
     }
 }

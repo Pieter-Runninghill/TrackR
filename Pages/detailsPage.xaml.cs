@@ -8,19 +8,12 @@ namespace TrackR.Pages
         public detailsPage(string clientName, DateTime date)
         {
             InitializeComponent();
-
             ClientNameLabel.Text = clientName;
             DateLabel.Text = date.ToString("MMMM dd, yyyy");
         }
 
-        private void InitializeComponent()
-        {
-            throw new NotImplementedException();
-        }
-
         private async void OnBackButtonClicked(object sender, EventArgs e)
         {
-            
             await Navigation.PopAsync();
         }
     }
