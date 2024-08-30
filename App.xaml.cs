@@ -7,7 +7,7 @@ namespace TrackR
     {
         public App()
         {
-            InitializeComponent();
+            InitializeComponent(); 
 
             var navPage = new NavigationPage(new MainPage());
 
