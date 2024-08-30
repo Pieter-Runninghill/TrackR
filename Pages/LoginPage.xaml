@@ -4,23 +4,21 @@
              x:Class="TrackR.Pages.LoginPage"
              BackgroundColor="White"
              xmlns:viewmodel="clr-namespace:TrackR.ViewModel"
-             x:DataType="viewmodel:LoginViewModel">
-    <ContentPage.Content>
-        <VerticalStackLayout VerticalOptions="Center" HorizontalOptions="Center">
-            <Image Source="TrackRTransparent.png"
+             x:DataType="viewmodel:LoginPageViewModel">
+    <VerticalStackLayout VerticalOptions="Center" HorizontalOptions="Center">
+        <Image Source="TrackRTransparent.png"
                WidthRequest="200"
                HeightRequest="200"
                HorizontalOptions="Center" />
-            <Entry Text="{Binding _Username}" Placeholder="Username"/>
-            <Entry Text="{Binding _Password}" Placeholder="Password" IsPassword="True"/>
-            <Button Text="Login"
+        <Entry Text="{Binding Username}" Placeholder="Username"/>
+        <Entry Text="{Binding Password}" Placeholder="Password" IsPassword="True"/>
+        <Button Text="Login"
                 BackgroundColor="#1f2937"
-                TextColor="#27353a"
+                TextColor="White"
                 CornerRadius="25"
                 WidthRequest="200"
                 HeightRequest="50"
                 HorizontalOptions="Center"
                 Command="{Binding LoginCommand}" />
-        </VerticalStackLayout>
-    </ContentPage.Content>
+    </VerticalStackLayout>
 </ContentPage>

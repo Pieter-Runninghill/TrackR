@@ -8,10 +8,10 @@ namespace TrackR.ViewModel
     public partial class LoginPageViewModel : ObservableObject
     {
         [ObservableProperty]
-        private string _Username;
+        private string username;
 
         [ObservableProperty]
-        private string _Password;
+        private string password;
 
         private readonly HttpClient _httpClient;
 
@@ -23,7 +23,7 @@ namespace TrackR.ViewModel
         [RelayCommand]
         private async Task LoginAsync()
         {
-            if (string.IsNullOrWhiteSpace(_Username) || string.IsNullOrWhiteSpace(_Password))
+            if (string.IsNullOrWhiteSpace(Username) || string.IsNullOrWhiteSpace(Password))
             {
                 await Application.Current.MainPage.DisplayAlert("Error", "Invalid credentials", "Ok");
                 return;
@@ -34,12 +34,11 @@ namespace TrackR.ViewModel
 
             var dto = new LoginDto
             {
-                Username = _Username,
-                Password = _Password
+                Username = Username,
+                Password = Password
             };
 
             // result = await _httpClient.PostAsJsonAsync("https://mydomain.com/login", dto);
-
             var result = new HttpResponseMessage(HttpStatusCode.OK);
 
             if (!result.IsSuccessStatusCode)
