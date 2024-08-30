@@ -2,11 +2,13 @@ using Microsoft.Maui.Controls;
 
 namespace TrackR.Pages
 {
-    public partial class MainPage : ContentPage
+    public partial class mainPage : ContentPage
     {
-        public MainPage()
+     
+
+        public void InitializeComponent()
         {
-            InitializeComponent();
+            throw new NotImplementedException();
         }
 
         private async void OnProfileButtonClicked(object sender, EventArgs e)

@@ -1,22 +1,10 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="TrackR.Pages.LoginPage"
-             BackgroundColor="White">
+             x:Class="TrackR.Pages.LoginPage">
 
     <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
-        <Image Source="trackr.png"
-               WidthRequest="200"
-               HeightRequest="200"
-               HorizontalOptions="Center" />
-
-        <Button Text="Login"
-                BackgroundColor="#1f2937"
-                TextColor="#27353a"
-                CornerRadius="25"
-                WidthRequest="200"
-                HeightRequest="50"
-                HorizontalOptions="Center"
-                Clicked="OnLoginButtonClicked" />
+        <Image Source="trackr.png" WidthRequest="200" HeightRequest="200" />
+        <Button Text="Login" />
     </StackLayout>
 </ContentPage>
