@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TrackR.Pages.ProfilePage"
+             BackgroundColor="#1f2937"
+             Padding="20">
+
+    <StackLayout VerticalOptions="Start">
+        <Label Text="Username:"
+               FontSize="18"
+               VerticalOptions="Center" />
+        <Entry Placeholder="Enter your username"
+               Text="YourUsername"
+               FontSize="18" />
+
+        <Label Text="Email:"
+               FontSize="18"
+               VerticalOptions="Center"
+               Margin="0,20,0,0" />
+        <Entry Placeholder="Enter your email"
+               Text="you@example.com"
+               FontSize="18" />
+
+        <Label Text="Home Location:"
+               FontSize="18"
+               VerticalOptions="Center"
+               Margin="0,20,0,0" />
+        <Entry Placeholder="Enter your home location"
+               Text="123 Home St"
+               FontSize="18" />
+
+        <Label Text="Work Address:"
+               FontSize="18"
+               VerticalOptions="Center"
+               Margin="0,20,0,0" />
+        <Entry Placeholder="Enter your work address"
+               Text="456 Work Ave"
+               FontSize="18" />
+    </StackLayout>
+</ContentPage>
