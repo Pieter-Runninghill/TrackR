@@ -10,6 +10,7 @@ namespace TrackR
 
             Routing.RegisterRoute(nameof(tripsPage), typeof(tripsPage));
             Routing.RegisterRoute(nameof(mainPage), typeof(mainPage));
+            Routing.RegisterRoute(nameof(ProfilePage), typeof(ProfilePage));
         }
     }
 }
