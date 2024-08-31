@@ -101,5 +101,19 @@ namespace TrackR.Services
                 throw;
             }
         }
+
+        public async Task<ResponseModel> CreateUser(User user)
+        {
+            // Simulating API call delay
+            await Task.Delay(1000);
+
+            // Dummy success response
+            return new ResponseModel
+            {
+                Success = true,
+                Message = "User created successfully",
+                Data = new { UserId = Guid.NewGuid().ToString() }
+            };
+        }
     }
 }

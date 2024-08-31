@@ -3,28 +3,34 @@ using CommunityToolkit.Mvvm.Input;
 using System.Net;
 using System.Net.Http.Json;
 using TrackR.Pages;
+using TrackR.Services.Interface;
 
 namespace TrackR.ViewModel
 {
     public partial class LoginViewModel : ObservableObject
     {
         [ObservableProperty]
-        private string username;
+        private string email;
 
         [ObservableProperty]
         private string password;
 
         private readonly HttpClient _httpClient;
+        private readonly IUserService _userService;
 
-        public LoginViewModel()
+        public LoginViewModel(IUserService userService)
         {
             _httpClient = new HttpClient();
+            _userService = userService;
+
         }
 
         [RelayCommand]
         private async Task LoginAsync()
         {
-            if (string.IsNullOrWhiteSpace(Username) || string.IsNullOrWhiteSpace(Password))
+
+
+            if (string.IsNullOrWhiteSpace(Email) || string.IsNullOrWhiteSpace(Password))
             {
                 await Shell.Current.DisplayAlert("Error", "Invalid credentials", "Ok");
                 return;
@@ -32,26 +38,34 @@ namespace TrackR.ViewModel
 
             var dto = new LoginDto
             {
-                Username = Username,
+                Email = Email,
                 Password = Password
             };
 
-            // result = await _httpClient.PostAsJsonAsync("https://mydomain.com/login", dto);
-            var result = new HttpResponseMessage(HttpStatusCode.OK);
+            var user = await _userService.GetUserByEmail(Email);
 
-            if (!result.IsSuccessStatusCode)
+            //ye
+            user.Password = Password;
+
+            if (user != null && user.Password == Password)
             {
-                await Shell.Current.DisplayAlert("Error", "Invalid credentials", "Ok");
-                return;
+                await Shell.Current.GoToAsync("//MainPage");
             }
-
-            await Shell.Current.GoToAsync("MainPage");
+            else
+            {
+                bool answer = await Shell.Current.DisplayAlert("Error", "Invalid credentials", "Try Again", "Sign Up");
+                if (!answer)
+                {
+                    await Shell.Current.GoToAsync("//SignUpPage");
+                }
+            }
+            var result = new HttpResponseMessage(HttpStatusCode.OK);
         }
     }
 
     public class LoginDto
     {
-        public string Username { get; set; }
+        public string Email { get; set; }
         public string Password { get; set; }
     }
 }
