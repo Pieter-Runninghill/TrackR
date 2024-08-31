@@ -8,6 +8,14 @@ namespace TrackR.Pages
         {
             InitializeComponent();
             BindingContext = viewModel;
+
+
+            #if ANDROID
+            if (Platform.CurrentActivity != null)
+            {
+                ((LoginViewModel)BindingContext).SetActivity(Platform.CurrentActivity);
+            }
+            #endif
         }
     }
 }
