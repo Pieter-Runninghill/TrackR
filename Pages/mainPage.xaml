@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TrackR.Pages.mainPage"
+             BackgroundColor="#1f2937"
+             xmlns:viewmodel="clr-namespace:TrackR.ViewModel"
+             x:DataType="viewmodel:MainViewModel">
+
+    <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
+        <Button Text="Profile"
+                WidthRequest="200"
+                HeightRequest="50"
+                Command="{Binding NavigateToProfileCommand}" />
+
+        <Button Text="Trips"
+                WidthRequest="200"
+                HeightRequest="50"
+                Margin="0,20,0,0"
+                Command="{Binding NavigateToTripsCommand}" />
+
+        <Button Text="New Trip"
+                WidthRequest="200"
+                HeightRequest="50"
+                Margin="0,20,0,0"
+                Command="{Binding NavigateToNewTripCommand}" />
+    </StackLayout>
+</ContentPage>

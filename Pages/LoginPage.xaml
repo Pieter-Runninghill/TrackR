@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TrackR.Pages.LoginPage"
+             BackgroundImageSource="background.jpg"
+             xmlns:viewmodel="clr-namespace:TrackR.ViewModel"
+             x:DataType="viewmodel:LoginPageViewModel">
+
+    
+
+    <Grid VerticalOptions="CenterAndExpand"
+          HorizontalOptions="CenterAndExpand"
+          Padding="20">
+
+        <StackLayout Spacing="10"
+                         VerticalOptions="Center"
+                         HorizontalOptions="Center"
+                         WidthRequest="300"
+                     >
+
+        <Image Source="trakrlogo.png"
+               Background="Transparent"
+               WidthRequest="300"
+               HeightRequest="350"
+               HorizontalOptions="Center" />
+
+        <Frame BackgroundColor="White"
+               CornerRadius="10"
+               HasShadow="True">
+            <Entry Text="{Binding Username}" 
+                       Placeholder="Username"
+                       HeightRequest="40"
+                       Margin="10,0"/>
+        </Frame>
+
+        <Frame BackgroundColor="White"
+               CornerRadius="10"
+               HasShadow="True">
+            <Entry Text="{Binding Password}" 
+                       Placeholder="Password" 
+                       IsPassword="True"
+                       HeightRequest="40"
+                       Margin="10,0"/>
+        </Frame>
+
+        <Button Text="Login"
+                BackgroundColor="#cfd70a"
+                TextColor="Black"
+                CornerRadius="25"
+                WidthRequest="200"
+                HeightRequest="50"
+                HorizontalOptions="Center"
+                Command="{Binding LoginCommand}" />
+
+        </StackLayout>
+
+    </Grid>
+
+</ContentPage>

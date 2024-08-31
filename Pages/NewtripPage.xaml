@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TrackR.Pages.NewTripPage"
+             xmlns:viewmodel="clr-namespace:TrackR.ViewModel"
+             x:DataType="viewmodel:NewTripViewModel">
+    
+    <VerticalStackLayout>
+        <Entry Text="{Binding StartLocation}" Placeholder="Start Location" />
+        <Entry Text="{Binding Destination}" Placeholder="Destination" />
+        <Entry Text="{Binding Routes}" Placeholder="Routes" />
+        <Entry Text="{Binding DistanceToOffice}" Placeholder="Distance to Office" />
+        <Entry Text="{Binding DistanceToClient}" Placeholder="Distance to Client" />
+        <Entry Text="{Binding DistanceDifference}" Placeholder="Distance Difference" />
+        <Entry Text="{Binding EligibleAllowance}" Placeholder="Eligible Allowance" />
+        <Entry Text="{Binding ReimbursementValue}" Placeholder="Reimbursement Value" />
+        <Button Text="Submit"
+                Command="{Binding SubmitCommand}" />
+    </VerticalStackLayout>
+</ContentPage>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TrackR.Pages.ProfilePage"
+             xmlns:viewmodel="clr-namespace:TrackR.ViewModel"
+             x:DataType="viewmodel:ProfileViewModel">
+    <VerticalStackLayout VerticalOptions="Center" HorizontalOptions="Center">
+        <Label Text="Username" />
+        <Entry Text="{Binding Username}" Placeholder="Enter your username" />
+
+        <Label Text="Email" />
+        <Entry Text="{Binding Email}" Placeholder="Enter your email" />
+
+        <Label Text="Home Location" />
+        <Entry Text="{Binding HomeLocation}" Placeholder="Enter your home location" />
+
+        <Label Text="Work Address" />
+        <Entry Text="{Binding WorkAddress}" Placeholder="Enter your work address" />
+    </VerticalStackLayout>
+</ContentPage>
