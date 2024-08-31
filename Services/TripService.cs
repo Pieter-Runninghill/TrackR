@@ -1,6 +1,7 @@
 ﻿using System.Net.Http.Json;
 using TrackR.Helpers;
 using TrackR.Models;
+using TrackR.Models.RequestModel;
 using TrackR.Models.ResponseModel;
 using TrackR.Services.Interface;
 
@@ -37,6 +38,35 @@ namespace TrackR.Services
                 }
 
                 return responseModel;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                throw;
+            }
+        }
+
+        public async Task<Trip> CreateTrip(TripRequest request)
+        {
+            try
+            {
+                Trip trip = new Trip();
+
+                var jsoncontent = JsonContent.Create(request);
+                var createTripDetais = await _httpClient.PostAsync("Trip/createTrip", jsoncontent);
+
+                if (createTripDetais.IsSuccessStatusCode)
+                {
+                    var response = await createTripDetais.Content.ReadFromJsonAsync<Trip>();
+
+                    if(response != null)
+                    {
+                        trip = response;
+                    }
+                }
+
+                return trip;
+
             }
             catch (Exception ex)
             {

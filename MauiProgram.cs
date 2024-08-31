@@ -24,6 +24,8 @@ namespace TrackR
 
             builder.Services.AddTransient<IUserService, UserService>();
             builder.Services.AddTransient<ITripService, TripService>();
+            builder.Services.AddTransient<IClientLocationService, ClientLocationService>();
+            builder.Services.AddTransient<IClientService, ClientService>();
 
 #if DEBUG
     		builder.Logging.AddDebug();
