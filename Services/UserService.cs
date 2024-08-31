@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using TrackR.Models;
 using TrackR.Models.ResponseModel;
 using TrackR.Services.Interface;
+using TrackR.Helpers;
 
 namespace TrackR.Services
 {
@@ -19,7 +20,7 @@ namespace TrackR.Services
         public UserService(HttpClient httpClient)
         {
             _httpClient = httpClient;
-            _httpClient.BaseAddress = new Uri("https://c9aa-41-150-248-158.ngrok-free.app/api/");
+            _httpClient.BaseAddress = new Uri(ApiConfig.BaseAddress);
         }
 
         public async Task<User> GetUserByEmail(string emailAddress)
