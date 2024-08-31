@@ -57,9 +57,11 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Resources\Images\background.jpg" />
 	  <None Remove="Resources\Images\TheCollective.PNG" />
+	  <None Remove="Resources\Images\trackertransparent.JPG" />
 	  <None Remove="Resources\Images\trackr.jpg" />
-	  <None Remove="Resources\Images\trackrtransparent.JPG" />
+	  <None Remove="Resources\Images\trakrlogo.png" />
 	</ItemGroup>
 
 	<ItemGroup>
