@@ -29,7 +29,6 @@ namespace TrackR
     		builder.Logging.AddDebug();
 #endif
 
-            // Register Views
             builder.Services.AddTransient<NewTripPage>();
             builder.Services.AddTransient<TripsPage>();
             builder.Services.AddTransient<MainPage>();
@@ -37,8 +36,6 @@ namespace TrackR
             builder.Services.AddTransient<ProfilePage>();
             builder.Services.AddTransient<LoginPage>();
 
-
-            // Register ViewModels
             builder.Services.AddTransient<MainViewModel>();
             builder.Services.AddTransient<NewTripViewModel>();
             builder.Services.AddTransient<TripsViewModel>();
