@@ -3,6 +3,8 @@ using CommunityToolkit.Mvvm.Input;
 using System.Net;
 using System.Net.Http.Json;
 using TrackR.Pages;
+using Microsoft.Identity.Client;
+using System.IdentityModel.Tokens.Jwt;
 
 namespace TrackR.ViewModel
 {
