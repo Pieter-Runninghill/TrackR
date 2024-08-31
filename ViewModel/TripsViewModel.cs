@@ -3,6 +3,7 @@ using CommunityToolkit.Mvvm.Input;
 using System.Collections.ObjectModel;
 using System.Text.Json;
 using TrackR.Models;
+using TrackR.Pages;
 using TrackR.Services.Interface;
 
 namespace TrackR.ViewModel
@@ -51,7 +52,7 @@ namespace TrackR.ViewModel
         private async Task AddTripAsync()
         {
             // Navigate to Add Trip page or show Add Trip dialog
-            await Shell.Current.GoToAsync("NewTripPage");
+            await Shell.Current.GoToAsync(nameof(NewTripPage));
         }
 
         [RelayCommand]
@@ -61,7 +62,7 @@ namespace TrackR.ViewModel
             {
                 { "TripId", trip.Id }
             };
-            await Shell.Current.GoToAsync("TripDetailsPage", navigationParameter);
+            await Shell.Current.GoToAsync(nameof(TripDetailsPage), navigationParameter);
         }
     }
 }

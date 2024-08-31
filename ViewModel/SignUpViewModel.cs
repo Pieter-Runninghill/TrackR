@@ -2,6 +2,7 @@
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using TrackR.Models;
+using TrackR.Pages;
 using TrackR.Services.Interface;
 
 namespace TrackR.ViewModel
@@ -17,6 +18,8 @@ namespace TrackR.ViewModel
         [ObservableProperty]
         private string name;
 
+        private bool _isSigningUp;
+
         private readonly IUserService _userService;
 
         public SignUpViewModel(IUserService userService)
@@ -27,6 +30,8 @@ namespace TrackR.ViewModel
         [RelayCommand]
         private async Task SignUpAsync()
         {
+            if (_isSigningUp) return;
+            _isSigningUp = true;
             if (string.IsNullOrWhiteSpace(Email) || string.IsNullOrWhiteSpace(Password) || string.IsNullOrWhiteSpace(Name))
             {
                 await Shell.Current.DisplayAlert("Error", "All fields are required", "Ok");
@@ -47,12 +52,13 @@ namespace TrackR.ViewModel
             {
                 string userJson = JsonSerializer.Serialize(result.User);
                 Preferences.Set("CurrentUser", userJson);
-                await Shell.Current.GoToAsync("MainPage");
+                await Shell.Current.GoToAsync(nameof(MainPage));
             }
             else
             {
                 await Shell.Current.DisplayAlert("Error", result.Message, "Ok");
             }
+            _isSigningUp = false;
         }
     }
 
