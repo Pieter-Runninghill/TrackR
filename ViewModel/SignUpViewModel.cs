@@ -47,7 +47,7 @@ namespace TrackR.ViewModel
             {
                 string userJson = JsonSerializer.Serialize(result.User);
                 Preferences.Set("CurrentUser", userJson);
-                await Shell.Current.GoToAsync("//MainPage");
+                await Shell.Current.GoToAsync("MainPage");
             }
             else
             {

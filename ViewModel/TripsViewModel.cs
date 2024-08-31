@@ -39,7 +39,11 @@ namespace TrackR.ViewModel
             if (CurrentUser != null)
             {
                 var userTrips = await _tripService.GetAllTripsByUser(CurrentUser.Id);
-                Trips = new ObservableCollection<Trip>(userTrips);
+                Trips = new ObservableCollection<Trip>(userTrips ?? new List<Trip>());
+            }
+            else
+            {
+                Trips = new ObservableCollection<Trip>();
             }
         }
 
@@ -47,7 +51,7 @@ namespace TrackR.ViewModel
         private async Task AddTripAsync()
         {
             // Navigate to Add Trip page or show Add Trip dialog
-            await Shell.Current.GoToAsync("AddTripPage");
+            await Shell.Current.GoToAsync("NewTripPage");
         }
 
         [RelayCommand]

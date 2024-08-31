@@ -35,6 +35,7 @@ namespace TrackR
             builder.Services.AddTransient<TripDetailsPage>();
             builder.Services.AddTransient<ProfilePage>();
             builder.Services.AddTransient<LoginPage>();
+            builder.Services.AddTransient<SignUpPage>();
 
             builder.Services.AddTransient<MainViewModel>();
             builder.Services.AddTransient<NewTripViewModel>();
@@ -42,6 +43,7 @@ namespace TrackR
             builder.Services.AddTransient<TripDetailsViewModel>();
             builder.Services.AddTransient<ProfileViewModel>();
             builder.Services.AddTransient<LoginViewModel>();
+            builder.Services.AddTransient<SignUpViewModel>();
 
 
             return builder.Build();

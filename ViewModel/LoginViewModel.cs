@@ -29,7 +29,11 @@ namespace TrackR.ViewModel
         [RelayCommand]
         private async Task LoginAsync()
         {
-
+            bool answer = await Shell.Current.DisplayAlert("Error", "Invalid credentials", "Try Again", "Sign Up");
+            if (!answer)
+            {
+                await Shell.Current.GoToAsync("SignUpPage");
+            }
 
             if (string.IsNullOrWhiteSpace(Email) || string.IsNullOrWhiteSpace(Password))
             {
@@ -46,21 +50,24 @@ namespace TrackR.ViewModel
             var user = await _userService.GetUserByEmail(Email);
 
             //ye
-            user.Password = Password;
+            if (user != null)
+            {
+                user.Password = Password;
+            }
 
             if (user != null && user.Password == Password)
             {
                 string userJson = JsonSerializer.Serialize(user);
                 Preferences.Set("CurrentUser", userJson);
 
-                await Shell.Current.GoToAsync("//MainPage");
+                await Shell.Current.GoToAsync("MainPage");
             }
             else
             {
-                bool answer = await Shell.Current.DisplayAlert("Error", "Invalid credentials", "Try Again", "Sign Up");
-                if (!answer)
+                bool answer2 = await Shell.Current.DisplayAlert("Error", "Invalid credentials", "Try Again", "Sign Up");
+                if (!answer2)
                 {
-                    await Shell.Current.GoToAsync("//SignUpPage");
+                    await Shell.Current.GoToAsync("SignUpPage");
                 }
             }
             var result = new HttpResponseMessage(HttpStatusCode.OK);
