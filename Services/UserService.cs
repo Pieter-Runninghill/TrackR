@@ -1,10 +1,13 @@
-﻿using System;
+﻿using Android.Content.Res;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http.Json;
+using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
 using TrackR.Models;
+using TrackR.Models.ResponseModel;
 using TrackR.Services.Interface;
 
 namespace TrackR.Services
@@ -15,19 +18,15 @@ namespace TrackR.Services
 
         public UserService(HttpClient httpClient)
         {
-            HttpClientHandler handler = new HttpClientHandler
-            {
-                ServerCertificateCustomValidationCallback = (message, cert, chain, errors) => true
-            };
-            _httpClient = new HttpClient(handler);
-            _httpClient.BaseAddress = new Uri("https://localhost:44350/api/");
+            _httpClient = httpClient;
+            _httpClient.BaseAddress = new Uri("https://c9aa-41-150-248-158.ngrok-free.app/api/");
         }
 
         public async Task<User> GetUserByEmail(string emailAddress)
         {
             try
             {
-                var response = await _httpClient.GetAsync("Users");
+                var response = await _httpClient.GetAsync($"Users/getUserByEmail/{emailAddress}");
 
                 if(response.IsSuccessStatusCode)
                 {
@@ -48,14 +47,58 @@ namespace TrackR.Services
             }
         }
 
-        public Task<List<User>> GetUsers()
+        public async Task<List<User>> GetUsers()
         {
-            throw new NotImplementedException();
+            try
+            {
+                var response = await _httpClient.GetAsync("Users");
+
+                if (response.IsSuccessStatusCode)
+                {
+                    var users = await response.Content.ReadFromJsonAsync<List<User>>();
+
+                    if (users != null)
+                    {
+                        return users;
+                    }
+                }
+
+                return null;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                throw;
+            }
         }
 
-        public Task Update(User entity)
+        public async Task<ResponseModel> Update(User entity)
         {
-            throw new NotImplementedException();
+            try
+            {
+                ResponseModel response = new ResponseModel();
+
+                var jsonContent = JsonContent.Create(entity);
+                var repsonse = await _httpClient.PutAsync("Users", jsonContent);
+
+                if (repsonse.IsSuccessStatusCode)
+                {
+                    response.Success = true;
+                    response.Message = "User Successfully Updated";
+                }
+                else
+                {
+                    response.Success = false;
+                    response.Message = "Failed to update user.";
+                }
+
+                return response;
+            }
+            catch(Exception ex)
+            {
+                Console.Write(ex.Message);
+                throw;
+            }
         }
     }
 }

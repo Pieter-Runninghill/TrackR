@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TrackR.Models;
+using TrackR.Models.ResponseModel;
 
 namespace TrackR.Services.Interface
 {
@@ -13,6 +14,6 @@ namespace TrackR.Services.Interface
 
         Task<List<User>> GetUsers();
 
-        Task Update(User entity);
+        Task<ResponseModel> Update(User entity);
     }
 }
