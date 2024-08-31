@@ -1,8 +1,8 @@
-﻿using CommunityToolkit.Mvvm.ComponentModel;
+﻿using System.Text.Json;
+using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using TrackR.Models;
 using TrackR.Services.Interface;
-using static Java.Util.Jar.Attributes;
 
 namespace TrackR.ViewModel
 {
@@ -33,21 +33,20 @@ namespace TrackR.ViewModel
                 return;
             }
 
-            var newUser = new User { Email = Email, Password = Password, Name = Name };
+            var newUser = new User { Email = Email, Password = Password, Name = Name, Id = 1 };
 
-            // Mock the CreateUser response using a struct
+            // Mock successful user creation
             var result = new UserCreationResult
             {
                 Success = true,
                 Message = "Account created successfully",
-                UserId = Guid.NewGuid().ToString()
+                User = newUser
             };
-            //ToDo
-            //var result = await _userService.CreateUser(newUser);
 
             if (result.Success)
             {
-                await Shell.Current.DisplayAlert("Success", "Account created successfully", "Ok");
+                string userJson = JsonSerializer.Serialize(result.User);
+                Preferences.Set("CurrentUser", userJson);
                 await Shell.Current.GoToAsync("//MainPage");
             }
             else
@@ -55,12 +54,12 @@ namespace TrackR.ViewModel
                 await Shell.Current.DisplayAlert("Error", result.Message, "Ok");
             }
         }
+    }
 
-        public struct UserCreationResult
-        {
-            public bool Success { get; set; }
-            public string Message { get; set; }
-            public string UserId { get; set; }
-        }
+    public struct UserCreationResult
+    {
+        public bool Success { get; set; }
+        public string Message { get; set; }
+        public User User { get; set; }
     }
 }

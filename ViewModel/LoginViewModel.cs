@@ -2,6 +2,7 @@
 using CommunityToolkit.Mvvm.Input;
 using System.Net;
 using System.Net.Http.Json;
+using System.Text.Json;
 using TrackR.Pages;
 using TrackR.Services.Interface;
 
@@ -49,6 +50,9 @@ namespace TrackR.ViewModel
 
             if (user != null && user.Password == Password)
             {
+                string userJson = JsonSerializer.Serialize(user);
+                Preferences.Set("CurrentUser", userJson);
+
                 await Shell.Current.GoToAsync("//MainPage");
             }
             else
