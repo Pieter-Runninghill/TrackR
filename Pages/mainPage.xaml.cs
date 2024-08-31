@@ -3,9 +3,9 @@ using TrackR.ViewModel;
 
 namespace TrackR.Pages
 {
-    public partial class mainPage : ContentPage
+    public partial class MainPage : ContentPage
     {
-        public mainPage(MainViewModel viewModel)
+        public MainPage(MainViewModel viewModel)
         {
             InitializeComponent();
             BindingContext = viewModel;

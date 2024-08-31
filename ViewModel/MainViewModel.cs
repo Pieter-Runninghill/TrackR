@@ -17,7 +17,7 @@ namespace TrackR.ViewModel
         [RelayCommand]
         private async Task NavigateToTripsAsync()
         {
-            await Shell.Current.GoToAsync("tripsPage");
+            await Shell.Current.GoToAsync("TripsPage");
         }
 
         [RelayCommand]

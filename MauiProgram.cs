@@ -24,7 +24,7 @@ namespace TrackR
             // Register Views
             builder.Services.AddTransient<NewTripPage>();
             builder.Services.AddTransient<TripsPage>();
-            builder.Services.AddTransient<mainPage>();
+            builder.Services.AddTransient<MainPage>();
             builder.Services.AddTransient<TripDetailsPage>();
             builder.Services.AddTransient<ProfilePage>();
             builder.Services.AddTransient<LoginPage>();
@@ -36,7 +36,7 @@ namespace TrackR
             builder.Services.AddTransient<TripsViewModel>();
             builder.Services.AddTransient<TripDetailsViewModel>();
             builder.Services.AddTransient<ProfileViewModel>();
-            builder.Services.AddTransient<LoginPageViewModel>();
+            builder.Services.AddTransient<LoginViewModel>();
 
 
             return builder.Build();

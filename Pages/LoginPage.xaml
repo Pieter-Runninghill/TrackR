@@ -4,7 +4,7 @@
              x:Class="TrackR.Pages.LoginPage"
              BackgroundImageSource="background.jpg"
              xmlns:viewmodel="clr-namespace:TrackR.ViewModel"
-             x:DataType="viewmodel:LoginPageViewModel">
+             x:DataType="viewmodel:LoginViewModel">
 
     
 
