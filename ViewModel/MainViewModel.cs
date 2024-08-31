@@ -1,5 +1,6 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using TrackR.Pages;
 
 namespace TrackR.ViewModel
 {
@@ -11,19 +12,19 @@ namespace TrackR.ViewModel
         [RelayCommand]
         private async Task NavigateToProfileAsync()
         {
-            await Shell.Current.GoToAsync("ProfilePage");
+            await Shell.Current.GoToAsync(nameof(ProfilePage));
         }
 
         [RelayCommand]
         private async Task NavigateToTripsAsync()
         {
-            await Shell.Current.GoToAsync("TripsPage");
+            await Shell.Current.GoToAsync(nameof(TripsPage));
         }
 
         [RelayCommand]
         private async Task NavigateToNewTripAsync()
         {
-            await Shell.Current.GoToAsync("NewTripPage");
+            await Shell.Current.GoToAsync(nameof(NewTripPage));
         }
     }
 }
