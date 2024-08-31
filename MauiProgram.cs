@@ -1,6 +1,9 @@
 ﻿using Microsoft.Extensions.Logging;
 using TrackR.Pages;
 using TrackR.ViewModel;
+using TrackR.Services;
+using TrackR.Services.Interface;
+using System.Net.Http;
 
 namespace TrackR
 {
@@ -16,6 +19,11 @@ namespace TrackR
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 });
+
+            builder.Services.AddHttpClient();
+
+            builder.Services.AddTransient<IUserService, UserService>();
+            builder.Services.AddTransient<ITripService, TripService>();
 
 #if DEBUG
     		builder.Logging.AddDebug();
