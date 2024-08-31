@@ -23,15 +23,15 @@ namespace TrackR
 
             // Register Views
             builder.Services.AddTransient<MainPage>();
-            builder.Services.AddTransient<NewtripPage>();
-            builder.Services.AddTransient<tripsPage>();
+            builder.Services.AddTransient<NewTripPage>();
+            builder.Services.AddTransient<TripsPage>();
             builder.Services.AddTransient<TripDetailsPage>();
             builder.Services.AddTransient<ProfilePage>();
 
             // Register ViewModels
             builder.Services.AddTransient<MainViewModel>();
             builder.Services.AddTransient<NewTripViewModel>();
-            builder.Services.AddTransient<tripsPage>();
+            builder.Services.AddTransient<TripsPage>();
             builder.Services.AddTransient<TripDetailsPage>();
             builder.Services.AddTransient<ProfilePage>();
             return builder.Build();

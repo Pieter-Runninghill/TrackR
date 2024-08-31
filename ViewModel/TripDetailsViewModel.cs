@@ -1,13 +1,33 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace TrackR.ViewModel
 {
     public partial class TripDetailsViewModel : ObservableObject
     {
+        [ObservableProperty]
+        private string clientName;
+
+        [ObservableProperty]
+        private string date;
+
+        [ObservableProperty]
+        private double distanceToOffice;
+
+        [ObservableProperty]
+        private double distanceToClient;
+
+        [ObservableProperty]
+        private double distanceDifference;
+
+        [ObservableProperty]
+        private double eligibleAllowance;
+
+        [ObservableProperty]
+        private double reimbursementValue;
+
+        public TripDetailsViewModel()
+        {
+           
+        }
     }
 }
