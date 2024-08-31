@@ -4,7 +4,7 @@ namespace TrackR.Pages
 {
     public partial class LoginPage : ContentPage
     {
-        public LoginPage(LoginPageViewModel viewModel)
+        public LoginPage(LoginViewModel viewModel)
         {
             InitializeComponent();
             BindingContext = viewModel;

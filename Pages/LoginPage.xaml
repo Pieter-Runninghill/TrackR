@@ -4,7 +4,7 @@
              x:Class="TrackR.Pages.LoginPage"
              BackgroundImageSource="background.jpg"
              xmlns:viewmodel="clr-namespace:TrackR.ViewModel"
-             x:DataType="viewmodel:LoginPageViewModel">
+             x:DataType="viewmodel:LoginViewModel">
 
     
 
@@ -30,8 +30,9 @@
             <Entry Text="{Binding Username}" 
                        Placeholder="Username"
                        HeightRequest="40"
-                       Margin="10,0"/>
-        </Frame>
+                       Margin="10,0"
+                       TextColor="Black"/>
+            </Frame>
 
         <Frame BackgroundColor="White"
                CornerRadius="10"
@@ -40,8 +41,9 @@
                        Placeholder="Password" 
                        IsPassword="True"
                        HeightRequest="40"
-                       Margin="10,0"/>
-        </Frame>
+                       Margin="10,0"
+                       TextColor="Black"/>
+            </Frame>
 
         <Button Text="Login"
                 BackgroundColor="#cfd70a"

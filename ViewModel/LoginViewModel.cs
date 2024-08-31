@@ -6,7 +6,7 @@ using TrackR.Pages;
 
 namespace TrackR.ViewModel
 {
-    public partial class LoginPageViewModel : ObservableObject
+    public partial class LoginViewModel : ObservableObject
     {
         [ObservableProperty]
         private string username;
@@ -16,7 +16,7 @@ namespace TrackR.ViewModel
 
         private readonly HttpClient _httpClient;
 
-        public LoginPageViewModel()
+        public LoginViewModel()
         {
             _httpClient = new HttpClient();
         }
@@ -45,7 +45,7 @@ namespace TrackR.ViewModel
                 return;
             }
 
-            await Shell.Current.GoToAsync("mainPage");
+            await Shell.Current.GoToAsync("MainPage");
         }
     }
 
