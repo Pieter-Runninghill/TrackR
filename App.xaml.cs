@@ -1,4 +1,8 @@
-﻿namespace TrackR
+﻿using Microsoft.Maui.Controls;
+using TrackR.Pages;
+using TrackR.ViewModel;
+
+namespace TrackR
 {
     public partial class App : Application
     {
@@ -6,7 +10,8 @@
         {
             InitializeComponent();
 
-            MainPage = new AppShell();
+            var loginViewModel = new LoginPageViewModel();
+            MainPage = new NavigationPage(new LoginPage(loginViewModel));
         }
     }
 }
