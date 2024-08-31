@@ -1,15 +1,17 @@
 using Microsoft.Maui.Controls;
+using TrackR.ViewModel;
 
 namespace TrackR.Pages
 {
     public partial class tripsPage : ContentPage
     {
-        public tripsPage()
+        public tripsPage(TripsViewModel viewModel)
         {
-            //InitializeComponent();
+            InitializeComponent();
+            BindingContext = viewModel;
         }
 
-        
+
 
         private  void OnDetailsButtonClicked(object sender, EventArgs e)
         {
