@@ -27,8 +27,8 @@
         <Frame BackgroundColor="White"
                CornerRadius="10"
                HasShadow="True">
-            <Entry Text="{Binding Username}" 
-                       Placeholder="Username"
+            <Entry Text="{Binding Email}" 
+                       Placeholder="Email"
                        HeightRequest="40"
                        Margin="10,0"
                        TextColor="Black"/>
