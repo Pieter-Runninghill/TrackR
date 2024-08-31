@@ -8,8 +8,9 @@ namespace TrackR
         {
             InitializeComponent();
 
-            Routing.RegisterRoute(nameof(tripsPage), typeof(tripsPage));
+            Routing.RegisterRoute(nameof(TripsPage), typeof(TripsPage));
             Routing.RegisterRoute(nameof(mainPage), typeof(mainPage));
+            Routing.RegisterRoute(nameof(ProfilePage), typeof(ProfilePage));
         }
     }
 }

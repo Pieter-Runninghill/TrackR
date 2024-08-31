@@ -1,20 +1,23 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="TrackR.Pages.tripsPage"
+             xmlns:viewmodel="clr-namespace:TrackR.ViewModel"
+             x:Class="TrackR.Pages.TripsPage"
+             x:DataType="viewmodel:TripsViewModel"
+             BackgroundColor="{StaticResource PrimaryBackgroundColor}"
              Padding="20">
 
     <StackLayout>
-        <Label Text="Trips List" FontSize="24" Margin="0,0,0,20" />
+        <Label Text="Trips List" Style="{StaticResource LabelStyle}" Margin="0,0,0,20" />
 
-        <ListView x:Name="TripsListView">
+        <ListView ItemsSource="{Binding Trips}" x:Name="TripsListView">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
                         <StackLayout Orientation="Horizontal" Padding="10">
-                            <Label Text="{Binding ClientName}" HorizontalOptions="StartAndExpand" />
-                            <Label Text="{Binding Date}" HorizontalOptions="End" />
-                            <Button Text="Details" Clicked="OnDetailsButtonClicked" />
+                            <Label Text="{Binding ClientName}" Style="{StaticResource LabelStyle}" HorizontalOptions="StartAndExpand" />
+                            <Label Text="{Binding Date}" Style="{StaticResource LabelStyle}" HorizontalOptions="End" />
+                            <Button Text="Details" Style="{StaticResource ButtonStyle}" Command="{Binding Path=BindingContext.NavigateToDetailsCommand, Source={x:Reference TripsListView}}" CommandParameter="{Binding .}" />
                         </StackLayout>
                     </ViewCell>
                 </DataTemplate>

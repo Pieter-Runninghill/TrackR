@@ -1,13 +1,24 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace TrackR.ViewModel
 {
-    public partial class ProfileViewModel: ObservableObject
+    public partial class ProfileViewModel : ObservableObject
     {
+        [ObservableProperty]
+        private string username;
+
+        [ObservableProperty]
+        private string email;
+
+        [ObservableProperty]
+        private string homeLocation;
+
+        [ObservableProperty]
+        private string workAddress;
+
+        public ProfileViewModel()
+        {
+            
+        }
     }
 }

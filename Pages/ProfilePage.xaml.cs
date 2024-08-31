@@ -1,4 +1,3 @@
-using Microsoft.Maui.Controls;
 using TrackR.ViewModel;
 
 namespace TrackR.Pages

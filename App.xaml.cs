@@ -10,8 +10,7 @@ namespace TrackR
         {
             InitializeComponent();
 
-            var loginViewModel = new LoginPageViewModel();
-            MainPage = new NavigationPage(new LoginPage(loginViewModel));
+            MainPage = new AppShell();
         }
     }
 }

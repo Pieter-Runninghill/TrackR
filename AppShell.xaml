@@ -3,13 +3,18 @@
     x:Class="TrackR.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:TrackR"
+    xmlns:local="clr-namespace:TrackR.Pages"
     Shell.FlyoutBehavior="Disabled"
     Title="TrackR">
 
     <ShellContent
+        Title="Login"
+        ContentTemplate="{DataTemplate local:LoginPage}"
+        Route="LoginPage" />
+
+    <ShellContent
         Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage"  />
+        ContentTemplate="{DataTemplate local:mainPage}"
+        Route="MainPage" />
 
 </Shell>
