@@ -1,17 +1,17 @@
-﻿namespace TrackR
+﻿
+namespace TrackR
 {
     public partial class MainPage : ContentPage
     {
-        
 
         public MainPage()
         {
-            InitializeComponent();
+            InitializeComponent();;
         }
 
-        private void OnCreateAccountClicked(object sender, EventArgs e)
+        private async void OnCreateAccountClicked(object sender, EventArgs e)
         {
-            
+          
         }
 
     }
