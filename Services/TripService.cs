@@ -1,4 +1,5 @@
 ﻿using System.Net.Http.Json;
+using TrackR.Helpers;
 using TrackR.Models;
 using TrackR.Models.ResponseModel;
 using TrackR.Services.Interface;
@@ -12,7 +13,7 @@ namespace TrackR.Services
         public TripService(HttpClient httpClient)
         {
             _httpClient = httpClient;
-            _httpClient.BaseAddress = new Uri("https://c9aa-41-150-248-158.ngrok-free.app/api/");
+            _httpClient.BaseAddress = new Uri(ApiConfig.BaseAddress);
         }
 
         public async Task<ResponseModel> Create(Trip entity)
