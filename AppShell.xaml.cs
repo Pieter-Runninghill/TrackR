@@ -11,6 +11,9 @@ namespace TrackR
             Routing.RegisterRoute(nameof(TripsPage), typeof(TripsPage));
             Routing.RegisterRoute(nameof(MainPage), typeof(MainPage));
             Routing.RegisterRoute(nameof(ProfilePage), typeof(ProfilePage));
+            Routing.RegisterRoute(nameof(TripDetailsPage), typeof(TripDetailsPage));
+            Routing.RegisterRoute(nameof(LoginPage), typeof(LoginPage));
+            Routing.RegisterRoute(nameof(NewTripPage), typeof(NewTripPage));
         }
     }
 }

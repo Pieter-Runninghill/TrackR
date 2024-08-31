@@ -33,7 +33,7 @@ namespace TrackR.ViewModel
             if (selectedTrip == null)
                 return;
 
-            await Shell.Current.GoToAsync("detailsPage", new Dictionary<string, object>
+            await Shell.Current.GoToAsync("TripDetailsPage", new Dictionary<string, object>
             {
                 { "SelectedTrip", selectedTrip }
             });
