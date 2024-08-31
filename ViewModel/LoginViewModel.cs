@@ -2,6 +2,7 @@
 using CommunityToolkit.Mvvm.Input;
 using System.Net;
 using System.Net.Http.Json;
+using TrackR.Pages;
 
 namespace TrackR.ViewModel
 {
@@ -25,12 +26,9 @@ namespace TrackR.ViewModel
         {
             if (string.IsNullOrWhiteSpace(Username) || string.IsNullOrWhiteSpace(Password))
             {
-                await Application.Current.MainPage.DisplayAlert("Error", "Invalid credentials", "Ok");
+                await Shell.Current.DisplayAlert("Error", "Invalid credentials", "Ok");
                 return;
             }
-
-            // Additional validation code omitted
-            // ...
 
             var dto = new LoginDto
             {
@@ -43,11 +41,11 @@ namespace TrackR.ViewModel
 
             if (!result.IsSuccessStatusCode)
             {
-                await Application.Current.MainPage.DisplayAlert("Error", "Invalid credentials", "Ok");
+                await Shell.Current.DisplayAlert("Error", "Invalid credentials", "Ok");
                 return;
             }
 
-            await Shell.Current.GoToAsync("homepage");
+            await Shell.Current.GoToAsync("mainPage");
         }
     }
 
