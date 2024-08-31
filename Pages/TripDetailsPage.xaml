@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodel="clr-namespace:TrackR.ViewModel"
+             x:Class="TrackR.Pages.TripDetailsPage"
+             x:DataType="viewmodel:TripDetailsViewModel"
+             BackgroundColor="{StaticResource PrimaryBackgroundColor}">
+
+    <StackLayout Padding="20">
+        <Label Text="Client Name:" Style="{StaticResource LabelStyle}" />
+        <Label Text="{Binding ClientName}" Style="{StaticResource LabelStyle}" />
+
+        <Label Text="Date:" Style="{StaticResource LabelStyle}" Margin="0,20,0,0" />
+        <Label Text="{Binding Date}" Style="{StaticResource LabelStyle}" />
+
+        <Label Text="Distance to Office:" Style="{StaticResource LabelStyle}" Margin="0,20,0,0" />
+        <Label Text="{Binding DistanceToOffice}" Style="{StaticResource LabelStyle}" />
+
+        <Label Text="Distance to Client:" Style="{StaticResource LabelStyle}" Margin="0,20,0,0" />
+        <Label Text="{Binding DistanceToClient}" Style="{StaticResource LabelStyle}" />
+
+        <Label Text="Distance Difference:" Style="{StaticResource LabelStyle}" Margin="0,20,0,0" />
+        <Label Text="{Binding DistanceDifference}" Style="{StaticResource LabelStyle}" />
+
+        <Label Text="Eligible for Allowance:" Style="{StaticResource LabelStyle}" Margin="0,20,0,0" />
+        <Label Text="{Binding EligibleAllowance}" Style="{StaticResource LabelStyle}" />
+
+        <Label Text="Reimbursement Value:" Style="{StaticResource LabelStyle}" Margin="0,20,0,0" />
+        <Label Text="{Binding ReimbursementValue}" Style="{StaticResource LabelStyle}" />
+    </StackLayout>
+</ContentPage>

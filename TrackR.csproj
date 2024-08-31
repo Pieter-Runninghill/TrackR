@@ -61,7 +61,6 @@
 	  <None Remove="Resources\Images\TheCollective.PNG" />
 	  <None Remove="Resources\Images\trackertransparent.JPG" />
 	  <None Remove="Resources\Images\trackr.jpg" />
-	  <None Remove="Resources\Images\TrackRTransparent.JPG" />
 	  <None Remove="Resources\Images\trakrlogo.png" />
 	</ItemGroup>
 
@@ -73,9 +72,12 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Update="Pages\detailsPage.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
+	  <Compile Update="Pages\NewtripPage.xaml.cs">
+	    <DependentUpon>NewtripPage.xaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
 	  <MauiXaml Update="Pages\LoginPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
@@ -86,6 +88,9 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Pages\ProfilePage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\TripDetailsPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Pages\TripsPage.xaml">

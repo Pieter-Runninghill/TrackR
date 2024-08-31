@@ -2,19 +2,19 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TrackR.Pages.ProfilePage"
-             Padding="20">
+             xmlns:viewmodel="clr-namespace:TrackR.ViewModel"
+             x:DataType="viewmodel:ProfileViewModel">
+    <VerticalStackLayout VerticalOptions="Center" HorizontalOptions="Center">
+        <Label Text="Username" />
+        <Entry Text="{Binding Username}" Placeholder="Enter your username" />
 
-    <StackLayout>
-        <Label Text="Username:" />
-        <Entry Placeholder="Enter your username" />
+        <Label Text="Email" />
+        <Entry Text="{Binding Email}" Placeholder="Enter your email" />
 
-        <Label Text="Email:" Margin="0,20,0,0" />
-        <Entry Placeholder="Enter your email" />
+        <Label Text="Home Location" />
+        <Entry Text="{Binding HomeLocation}" Placeholder="Enter your home location" />
 
-        <Label Text="Home Location:" Margin="0,20,0,0" />
-        <Entry Placeholder="Enter your home location" />
-
-        <Label Text="Work Address:" Margin="0,20,0,0" />
-        <Entry Placeholder="Enter your work address" />
-    </StackLayout>
+        <Label Text="Work Address" />
+        <Entry Text="{Binding WorkAddress}" Placeholder="Enter your work address" />
+    </VerticalStackLayout>
 </ContentPage>

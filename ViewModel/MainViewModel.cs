@@ -1,5 +1,5 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
-using System.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 
 namespace TrackR.ViewModel
 {
@@ -7,5 +7,23 @@ namespace TrackR.ViewModel
     {
         [ObservableProperty]
         string text;
+
+        [RelayCommand]
+        private async Task NavigateToProfileAsync()
+        {
+            await Shell.Current.GoToAsync("ProfilePage");
+        }
+
+        [RelayCommand]
+        private async Task NavigateToTripsAsync()
+        {
+            await Shell.Current.GoToAsync("tripsPage");
+        }
+
+        [RelayCommand]
+        private async Task NavigateToNewTripAsync()
+        {
+            await Shell.Current.GoToAsync("NewTripPage");
+        }
     }
 }

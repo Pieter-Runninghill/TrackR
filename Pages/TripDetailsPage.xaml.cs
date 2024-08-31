@@ -2,9 +2,9 @@ using TrackR.ViewModel;
 
 namespace TrackR.Pages
 {
-    public partial class TripsPage : ContentPage
+    public partial class TripDetailsPage : ContentPage
     {
-        public TripsPage(TripsViewModel viewModel)
+        public TripDetailsPage (TripDetailsViewModel viewModel)
         {
             InitializeComponent();
             BindingContext = viewModel;

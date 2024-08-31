@@ -1,34 +1,20 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="TrackR.Pages.NewtripPage"
-             Padding="20">
-
-    <StackLayout>
-        <Label Text="Start Location:" />
-        <Entry x:Name="StartLocationEntry" Placeholder="Enter start location" />
-
-        <Label Text="Destination:" Margin="0,20,0,0" />
-        <Entry x:Name="DestinationEntry" Placeholder="Enter destination" />
-
-        <Label Text="Routes:" Margin="0,20,0,0" />
-        <Entry x:Name="RoutesEntry" Placeholder="Enter routes" />
-
-        <Label Text="Distance to Office:" Margin="0,20,0,0" />
-        <Entry x:Name="DistanceToOfficeEntry" Placeholder="Enter distance to office" Keyboard="Numeric" />
-
-        <Label Text="Distance to Client:" Margin="0,20,0,0" />
-        <Entry x:Name="DistanceToClientEntry" Placeholder="Enter distance to client" Keyboard="Numeric" />
-
-        <Label Text="Distance Difference:" Margin="0,20,0,0" />
-        <Entry x:Name="DistanceDifferenceEntry" Placeholder="Enter distance difference" Keyboard="Numeric" />
-
-        <Label Text="Eligible Allowance:" Margin="0,20,0,0" />
-        <Entry x:Name="EligibleAllowanceEntry" Placeholder="Enter eligible allowance" Keyboard="Numeric" />
-
-        <Label Text="Reimbursement Value:" Margin="0,20,0,0" />
-        <Entry x:Name="ReimbursementValueEntry" Placeholder="Enter reimbursement value" Keyboard="Numeric" />
-
-        <Button Text="Submit" Clicked="OnSubmitButtonClicked" Margin="0,20,0,0" />
-    </StackLayout>
+             x:Class="TrackR.Pages.NewTripPage"
+             xmlns:viewmodel="clr-namespace:TrackR.ViewModel"
+             x:DataType="viewmodel:NewTripViewModel">
+    
+    <VerticalStackLayout>
+        <Entry Text="{Binding StartLocation}" Placeholder="Start Location" />
+        <Entry Text="{Binding Destination}" Placeholder="Destination" />
+        <Entry Text="{Binding Routes}" Placeholder="Routes" />
+        <Entry Text="{Binding DistanceToOffice}" Placeholder="Distance to Office" />
+        <Entry Text="{Binding DistanceToClient}" Placeholder="Distance to Client" />
+        <Entry Text="{Binding DistanceDifference}" Placeholder="Distance Difference" />
+        <Entry Text="{Binding EligibleAllowance}" Placeholder="Eligible Allowance" />
+        <Entry Text="{Binding ReimbursementValue}" Placeholder="Reimbursement Value" />
+        <Button Text="Submit"
+                Command="{Binding SubmitCommand}" />
+    </VerticalStackLayout>
 </ContentPage>
