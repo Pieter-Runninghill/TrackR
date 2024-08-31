@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using TrackR.Models;
+﻿using TrackR.Models;
+using TrackR.Models.RequestModel;
 using TrackR.Models.ResponseModel;
 
 namespace TrackR.Services.Interface
@@ -15,5 +11,9 @@ namespace TrackR.Services.Interface
         Task<List<User>> GetUsers();
 
         Task<ResponseModel> Update(User entity);
+
+        Task<ResponseModel> CreateUser(UserCreateRequest request);
+
+        Task<IdentityResponse> UserLogin(UserLoginRequest request);
     }
 }
