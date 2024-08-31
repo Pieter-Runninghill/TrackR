@@ -2,6 +2,7 @@
 using CommunityToolkit.Mvvm.Input;
 using System.Net;
 using System.Net.Http.Json;
+using TrackR.Pages;
 
 namespace TrackR.ViewModel
 {
@@ -47,7 +48,7 @@ namespace TrackR.ViewModel
                 return;
             }
 
-            await Shell.Current.GoToAsync("homepage");
+            await Shell.Current.GoToAsync($"//{nameof(mainPage)}");
         }
     }
 

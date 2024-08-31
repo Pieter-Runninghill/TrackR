@@ -22,11 +22,13 @@ namespace TrackR
 #endif
 
             // Register Views
-            builder.Services.AddTransient<MainPage>();
+            builder.Services.AddTransient<mainPage>();
             builder.Services.AddTransient<NewtripPage>();
             builder.Services.AddTransient<tripsPage>();
             builder.Services.AddTransient<TripDetailsPage>();
             builder.Services.AddTransient<ProfilePage>();
+            builder.Services.AddTransient<LoginPage>();
+
 
             // Register ViewModels
             builder.Services.AddTransient<MainViewModel>();
@@ -34,6 +36,9 @@ namespace TrackR
             builder.Services.AddTransient<tripsPage>();
             builder.Services.AddTransient<TripDetailsPage>();
             builder.Services.AddTransient<ProfilePage>();
+            builder.Services.AddTransient<LoginPageViewModel>();
+
+
             return builder.Build();
         }
     }
