@@ -1,4 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
+using TrackR.Pages;
+using TrackR.ViewModel;
 
 namespace TrackR
 {
@@ -19,6 +21,19 @@ namespace TrackR
     		builder.Logging.AddDebug();
 #endif
 
+            // Register Views
+            builder.Services.AddTransient<MainPage>();
+            builder.Services.AddTransient<NewtripPage>();
+            builder.Services.AddTransient<tripsPage>();
+            builder.Services.AddTransient<TripDetailsPage>();
+            builder.Services.AddTransient<ProfilePage>();
+
+            // Register ViewModels
+            builder.Services.AddTransient<MainViewModel>();
+            builder.Services.AddTransient<NewTripViewModel>();
+            builder.Services.AddTransient<tripsPage>();
+            builder.Services.AddTransient<TripDetailsPage>();
+            builder.Services.AddTransient<ProfilePage>();
             return builder.Build();
         }
     }
